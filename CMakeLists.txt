@@ -4,6 +4,11 @@ set(CMAKE_CXX_STANDARD 17)
 
 project(Membot)
 
+option(ENABLE_DEBUG "Enable debug symbold" ON)
+if(ENABLE_DEBUG)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+endif()
+
 find_package(wxWidgets REQUIRED COMPONENTS core base)
 include(${wxWidgets_USE_FILE})
 
